@@ -3,7 +3,9 @@ Kneel::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   devise_for :users
-  resources :lists
+  resources :lists do
+    resources :requests
+  end
 
   root 'lists#index'
 

@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
   validates_presence_of :username
   validates :username, length: { in: 4..20 }
+
+  has_many :lists, :dependent => :destroy
+  has_many :requests, :through => :list
 end

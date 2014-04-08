@@ -1,0 +1,8 @@
+<%= div_for request do %>
+<h3>
+	<%= request.name %>
+</h3>
+<span class='actions'>
+	<%= link_to 'Delete', [@list, request], :confirm => 'Are you sure?', :method => :delete %>
+</span>
+<% end %> 
